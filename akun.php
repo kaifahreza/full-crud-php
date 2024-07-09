@@ -214,7 +214,7 @@ if (isset($_POST['ubah'])) {
                 <div class="modal-body">
                     <form action="" method="post">
                         <input type="hidden" name="id_akun" value="<?= $akun['id_akun']; ?>">
-
+                        //12
                         <div class="mb-3">
                             <label for="nama">Nama</label>
                             <input type="text" name="nama" id="nama" class="form-control" value="<?= $akun['nama']; ?>" required>

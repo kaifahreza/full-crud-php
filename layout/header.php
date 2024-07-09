@@ -73,34 +73,50 @@ include 'config/app.php';
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <p>
+                                    Dashboard
+                                </p>
+                            </a>
+                        </li>
+
+
                         <li class="nav-header">Daftar Menu</li>
 
-                        <li class="nav-item">
-                            <a href="index.php" class="nav-link">
-                                <i class="nav-icon fas fa-list"></i>
-                                <p>
-                                    Data Barang
-                                </p>
-                            </a>
-                        </li>
+                        <?php if ($_SESSION['level'] == 1 or $_SESSION['level'] == 2) : ?>
+                            <li class="nav-item">
+                                <a href="index.php" class="nav-link">
+                                    <i class="nav-icon fas fa-list"></i>
+                                    <p>
+                                        Data Barang
+                                    </p>
+                                </a>
+                            </li>
+                        <?php endif; ?>
 
-                        <li class="nav-item">
-                            <a href="mahasiswa.php" class="nav-link">
-                                <i class="nav-icon fas fa-users"></i>
-                                <p>
-                                    Data Mahasiswa
-                                </p>
-                            </a>
-                        </li>
+                        <?php if ($_SESSION['level'] == 1 or $_SESSION['level'] == 3) : ?>
+                            <li class="nav-item">
+                                <a href="mahasiswa.php" class="nav-link">
+                                    <i class="nav-icon fas fa-users"></i>
+                                    <p>
+                                        Data Mahasiswa
+                                    </p>
+                                </a>
+                            </li>
+                        <?php endif; ?>
 
-                        <li class="nav-item">
-                            <a href="pegawai.php" class="nav-link">
-                                <i class="nav-icon fas fa-user"></i>
-                                <p>
-                                    Data Pegawai (Realtime)
-                                </p>
-                            </a>
-                        </li>
+                        <?php if ($_SESSION['level'] == 1 or $_SESSION['level'] == 4) : ?>
+                            <li class="nav-item">
+                                <a href="pegawai.php" class="nav-link">
+                                    <i class="nav-icon fas fa-user"></i>
+                                    <p>
+                                        Data Pegawai (Realtime)
+                                    </p>
+                                </a>
+                            </li>
+                        <?php endif; ?>
 
                         <li class="nav-item">
                             <a href="email.php" class="nav-link">
